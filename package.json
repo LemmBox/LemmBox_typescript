@@ -1,17 +1,13 @@
 {
-	"name": "UltraBox",
-	"version": "2.2.13",
-	"description": "UltraBox is a mod of BeepBox that aims to combine every other beepmod into one.",
-	"author": "Main",
+	"name": "LemmBox",
+	"version": "0.9",
+	"description": "LemmBox is a mod of UltraBox.",
+	"author": "HappyLemonLime",
 	"contributors": [
-		"Neputendo",
-		"LeoV",
-		"Mid",
-		"choptop84",
-		"Slarmoo"
+	
 	],
 	"license": "MIT",
-	"homepage": "https://ultraabox.github.io",
+	"homepage": "https://lemmbox.github.io",
 	"type": "module",
 	"main": "main.js",
 	"icon": "path.join(__dirname, 'icon.ico')",
@@ -25,11 +21,11 @@
 		"deploy-files": "bash ./deploy_files.sh",
 		"start": "electron ./to_deploy",
 		"package": "electron-packager ./to_deploy --platform=darwin,linux,win32 --arch=ia32,x64 --asar --overwrite && npm run build-offline-html",
-		"package-host": "electron-packager ./to_deploy UltraBox --asar --overwrite && npm run build-offline-html"
+		"package-host": "electron-packager ./to_deploy LemmBox --asar --overwrite && npm run build-offline-html"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/ultraabox/ultrabox_typescript.git"
+		"url": "git+https://github.com/LemmBox/LemmBox_typescript.git"
 	},
 	"devDependencies": {
 		"@electron/packager": "^18.3.5",
