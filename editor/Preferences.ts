@@ -55,19 +55,19 @@ export class Preferences {
 		this.enableNotePreview = window.localStorage.getItem("enableNotePreview") != "false";
 		this.showFifth = window.localStorage.getItem("showFifth") == "true";
 		this.notesOutsideScale = window.localStorage.getItem("notesOutsideScale") == "true";
-		this.showLetters = window.localStorage.getItem("showLetters") == "true";
+		this.showLetters = window.localStorage.getItem("showLetters") != "false";
 		this.showChannels = window.localStorage.getItem("showChannels") == "true";
 		this.showScrollBar = window.localStorage.getItem("showScrollBar") != "false";
-		this.alwaysFineNoteVol = window.localStorage.getItem("alwaysFineNoteVol") == "true";
-		this.displayVolumeBar = window.localStorage.getItem("displayVolumeBar") == "true";
+		this.alwaysFineNoteVol = window.localStorage.getItem("alwaysFineNoteVol") != "false";
+		this.displayVolumeBar = window.localStorage.getItem("displayVolumeBar") != "false";
 		this.instrumentCopyPaste = window.localStorage.getItem("instrumentCopyPaste") != "false";
-		this.instrumentImportExport = window.localStorage.getItem("instrumentImportExport") == "true";
+		this.instrumentImportExport = window.localStorage.getItem("instrumentImportExport") != "false";
 		this.instrumentButtonsAtTop = window.localStorage.getItem("instrumentButtonsAtTop") == "true"
-		this.enableChannelMuting = window.localStorage.getItem("enableChannelMuting") == "true";
+		this.enableChannelMuting = window.localStorage.getItem("enableChannelMuting") != "false";
 		this.displayBrowserUrl = window.localStorage.getItem("displayBrowserUrl") != "false";
 		this.pressControlForShortcuts = window.localStorage.getItem("pressControlForShortcuts") == "true";
 		this.enableMidi = window.localStorage.getItem("enableMidi") != "false";
-		this.showRecordButton = window.localStorage.getItem("showRecordButton") == "true";
+		this.showRecordButton = window.localStorage.getItem("showRecordButton") != "false";
 		this.snapRecordedNotesToRhythm = window.localStorage.getItem("snapRecordedNotesToRhythm") == "true";
 		this.ignorePerformedNotesNotInScale = window.localStorage.getItem("ignorePerformedNotesNotInScale") == "true";
 		this.metronomeCountIn = window.localStorage.getItem("metronomeCountIn") != "false";
@@ -81,7 +81,7 @@ export class Preferences {
 		this.frostedGlassBackground = window.localStorage.getItem("frostedGlassBackground") == "true";
 		this.keyboardLayout = window.localStorage.getItem("keyboardLayout") || "wickiHayden";
 		this.bassOffset = (+(<any>window.localStorage.getItem("bassOffset"))) || 0;
-		this.layout = window.localStorage.getItem("layout") || "small";
+		this.layout = window.localStorage.getItem("layout") || "long";
 		this.colorTheme = window.localStorage.getItem("colorTheme") || ColorConfig.defaultTheme;
 		this.customTheme = window.localStorage.getItem("customTheme");
         this.customTheme2 = window.localStorage.getItem("customTheme2");
