@@ -4540,7 +4540,7 @@ export class ColorConfig {
     --loop-accent: #fff570;
     --link-accent: #fff570;
     --ui-widget-background: #191721;
-    --ui-widget-focus: #191721;
+    --ui-widget-focus: #2d293b;
     --pitch-background: #44444A;
     --tonic: #c2a855;
     --fifth-note: #468;
@@ -4604,7 +4604,7 @@ export class ColorConfig {
     --pitch8-secondary-channel: #94249e;
     --pitch8-primary-channel: #cf2cde;
     --pitch8-secondary-note: #b326bf;
-    --pitch8-primary-note: #cb4bd6;
+    --pitch8-primary-note: #c53fd1;
 
     --pitch9-secondary-channel: #c42f6b;
     --pitch9-primary-channel: #fc5d9d;
