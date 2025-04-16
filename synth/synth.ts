@@ -2079,7 +2079,7 @@ export class Instrument {
         }
 
         if (instrumentObject["volume"] != undefined) {
-            if (format == "jummbox" || format == "midbox" || format == "synthbox" || format == "goldbox" || format == "paandorasbox" || format == "ultrabox") {
+            if (format == "jummbox" || format == "midbox" || format == "synthbox" || format == "goldbox" || format == "paandorasbox" || format == "ultrabox" || format =="lemmbox") {
                 this.volume = clamp(-Config.volumeRange / 2, (Config.volumeRange / 2) + 1, instrumentObject["volume"] | 0);
             } else {
                 this.volume = Math.round(-clamp(0, 8, Math.round(5 - (instrumentObject["volume"] | 0) / 20)) * 25.0 / 7.0);
@@ -2860,7 +2860,7 @@ export class Song {
     private static readonly _latestUltraBoxVersion: number = 5;
     // One-character variant detection at the start of URL to distinguish variants such as JummBox, Or Goldbox. "j" and "g" respectively
 	//also "u" is ultrabox lol
-    private static readonly _variant = 0x75; //"u" ~ ultrabox
+    private static readonly _variant = 0x4c; //"l" ~ lemmbox
 
     public title: string;
     public scale: number;
@@ -3759,6 +3759,12 @@ export class Song {
 	        fromUltraBox = false;
             charIndex++;
         } else if (variantTest == 0x75) { //"u"
+                fromBeepBox = false;
+                fromJummBox = false;
+                fromGoldBox = false;
+		        fromUltraBox = true;
+                charIndex++;
+        } else if (variantTest == 0x4c) { //"L"
                 fromBeepBox = false;
                 fromJummBox = false;
                 fromGoldBox = false;
@@ -6183,7 +6189,7 @@ export class Song {
         //if (version > Song._latestVersion) return; // Go ahead and try to parse something from the future I guess? JSON is pretty easy-going!
 
         // Code for auto-detect mode; if statements that are lower down have 'higher priority'
-        if (jsonFormat == "auto") {
+        if (jsonFormat == "lemmbox") {
             if (jsonObject["format"] == "BeepBox") {
                 // Assume that if there is a "riff" song setting then it must be modbox
                 if (jsonObject["riff"] != undefined) {
