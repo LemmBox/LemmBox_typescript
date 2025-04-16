@@ -45,7 +45,7 @@ export class AddSamplesPrompt {
         this._addSampleButton,
         this._addMultipleSamplesButton
     );
-    private readonly _instructionsLink: HTMLAnchorElement = a({ href: "#" }, "Here's more information and some instructions on how to use custom samples in UltraBox.");
+    private readonly _instructionsLink: HTMLAnchorElement = a({ href: "#" }, "Here's more information and some instructions on how to use custom samples in LemmBox.");
     private readonly _description: HTMLDivElement = div(
         div({ style: "margin-bottom: 0.5em; -webkit-user-select: text; -moz-user-select: text; -ms-user-select: text; user-select: text; cursor: text;" },
             "In order to use the old UltraBox samples, you should add ",

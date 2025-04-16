@@ -3,9 +3,7 @@
 	"version": "0.9.1",
 	"description": "LemmBox is a mod of UltraBox.",
 	"author": "HappyLemonLime",
-	"contributors": [
-	
-	],
+	"contributors": [],
 	"license": "MIT",
 	"homepage": "https://lemmbox.github.io",
 	"type": "module",
@@ -30,11 +28,12 @@
 	"devDependencies": {
 		"@electron/packager": "^18.3.5",
 		"@rollup/plugin-node-resolve": "^15.1.0",
+		"@types/node": "^22.14.1",
 		"electron": "^33.0.0",
 		"rollup": "^2.79.1",
 		"rollup-plugin-sourcemaps": "^0.6.3",
 		"terser": "^5.19.2",
-		"typescript": "^5.7.3"
+		"typescript": "^5.4.5"
 	},
 	"dependencies": {
 		"@types/jquery": "^3.5.5",
