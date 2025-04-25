@@ -2859,7 +2859,6 @@ export class Song {
     private static readonly _oldestUltraBoxVersion: number = 1;
     private static readonly _latestUltraBoxVersion: number = 5;
     // One-character variant detection at the start of URL to distinguish variants such as JummBox, Or Goldbox. "j" and "g" respectively
-	//also "u" is ultrabox lol
     private static readonly _variant = 0x4c; //"l" ~ lemmbox
 
     public title: string;
@@ -3032,7 +3031,7 @@ export class Song {
         if (andResetChannels) {
             this.pitchChannelCount = 3;
             this.noiseChannelCount = 1;
-            this.modChannelCount = 0;
+            this.modChannelCount = 1;
             for (let channelIndex: number = 0; channelIndex < this.getChannelCount(); channelIndex++) {
                 const isNoiseChannel: boolean = channelIndex >= this.pitchChannelCount && channelIndex < this.pitchChannelCount + this.noiseChannelCount;
                 const isModChannel: boolean = channelIndex >= this.pitchChannelCount + this.noiseChannelCount;
