@@ -1177,6 +1177,40 @@ html {
 	mask-position: center;
 }
 
+.beepboxEditor button.setDefault::before {
+	content: "";
+	position: absolute;
+	width: var(--button-size);
+	height: var(--button-size);
+	left: 0;
+	top: 0;
+	pointer-events: none;
+	background: currentColor;
+	-webkit-mask-image: var(--internal-add-symbol);
+	-webkit-mask-repeat: no-repeat;
+	-webkit-mask-position: center;
+	mask-image: var(--internal-add-symbol);
+	mask-repeat: no-repeat;
+	mask-position: center;
+}
+
+.beepboxEditor button.cancelOption::before {
+	content: "";
+	position: absolute;
+	width: var(--button-size);
+	height: var(--button-size);
+	left: 0;
+	top: 0;
+	pointer-events: none;
+	background: currentColor;
+	-webkit-mask-image: var(--internal-close-symbol);
+	-webkit-mask-repeat: no-repeat;
+	-webkit-mask-position: center;
+	mask-image: var(--internal-close-symbol);
+	mask-repeat: no-repeat;
+	mask-position: center;
+}
+
 .beepboxEditor button.exportButton::before {
 	content: "";
 	position: absolute;

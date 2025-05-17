@@ -46,6 +46,7 @@ import { SpectrumEditor, SpectrumEditorPrompt } from "./SpectrumEditor";
 import { CustomThemePrompt } from "./CustomThemePrompt";
 import { ThemePrompt } from "./ThemePrompt";
 import { TipPrompt } from "./TipPrompt";
+// import { PresetPrompt } from "./PresetPrompt";
 import { ChangeTempo, ChangeKeyOctave, ChangeChorus, ChangeEchoDelay, ChangeEchoSustain, ChangeReverb, ChangeVolume, ChangePan, ChangePatternSelection, ChangePatternsPerChannel, ChangePatternNumbers, ChangeSupersawDynamism, ChangeSupersawSpread, ChangeSupersawShape, ChangePulseWidth, ChangeFeedbackAmplitude, ChangeOperatorAmplitude, ChangeOperatorFrequency, ChangeDrumsetEnvelope, ChangePasteInstrument, ChangePreset, pickRandomPresetValue, ChangeRandomGeneratedInstrument, ChangeEQFilterType, ChangeNoteFilterType, ChangeEQFilterSimpleCut, ChangeEQFilterSimplePeak, ChangeNoteFilterSimpleCut, ChangeNoteFilterSimplePeak, ChangeScale, ChangeDetectKey, ChangeKey, ChangeRhythm, ChangeFeedbackType, ChangeAlgorithm, ChangeChipWave, ChangeNoiseWave, ChangeTransition, ChangeToggleEffects, ChangeVibrato, ChangeUnison, ChangeChord, ChangeSong, ChangePitchShift, ChangeDetune, ChangeDistortion, ChangeStringSustain, ChangeBitcrusherFreq, ChangeBitcrusherQuantization, ChangeAddEnvelope, ChangeEnvelopeSpeed, ChangeDiscreteEnvelope, ChangeAddChannelInstrument, ChangeRemoveChannelInstrument, ChangeCustomWave, ChangeOperatorWaveform, ChangeOperatorPulseWidth, ChangeSongTitle, ChangeVibratoDepth, ChangeVibratoSpeed, ChangeVibratoDelay, ChangeVibratoType, ChangePanDelay, ChangeArpeggioSpeed, ChangeFastTwoNoteArp, ChangeClicklessTransition, ChangeAliasing, ChangeSetPatternInstruments, ChangeHoldingModRecording, ChangeChipWavePlayBackwards, ChangeChipWaveStartOffset, ChangeChipWaveLoopEnd, ChangeChipWaveLoopStart, ChangeChipWaveLoopMode, ChangeChipWaveUseAdvancedLoopControls, ChangeDecimalOffset, ChangeUnisonVoices, ChangeUnisonSpread, ChangeUnisonOffset, ChangeUnisonExpression, ChangeUnisonSign, Change6OpFeedbackType, Change6OpAlgorithm, ChangeCustomAlgorythmorFeedback } from "./changes";
 
 import { TrackEditor } from "./TrackEditor";
@@ -763,6 +764,8 @@ export class SongEditor {
     private readonly _fileMenu: HTMLSelectElement = select({ style: "width: 100%;" },
         option({ selected: true, disabled: true, hidden: false }, "File"), // todo: "hidden" should be true but looks wrong on mac chrome, adds checkmark next to first visible option even though it's not selected. :(
         option({ value: "new" }, "+ New Blank Song (⇧`)"),
+        // option({ value: "PresetPrompt" }, "+ New Song From Preset (⇧`) + P"),
+        // commented out till I can find time to properly implement this - Lemon
         option({ value: "import" }, "↑ Import Song... (" + EditorConfig.ctrlSymbol + "O)"),
         option({ value: "export" }, "↓ Export Song... (" + EditorConfig.ctrlSymbol + "S)"),
         option({ value: "copyUrl" }, "⎘ Copy Song URL"),
@@ -2036,6 +2039,9 @@ export class SongEditor {
                 case "import":
                     this.prompt = new ImportPrompt(this._doc);
                     break;
+                // case "PresetPrompt":
+                //     this.prompt = new PresetPrompt(this._doc);
+                //     break;
                 case "songRecovery":
                     this.prompt = new SongRecoveryPrompt(this._doc);
                     break;
@@ -4998,6 +5004,9 @@ export class SongEditor {
                 }
                 this._doc.record(new ChangeSong(this._doc, ""), false, true);
                 break;
+            // case "PresetPrompt":
+            //     this._openPrompt("PresetPrompt");
+            //     break;
             case "export":
                 this._openPrompt("export");
                 break;
