@@ -656,7 +656,7 @@ export class Pattern {
                     note.continuesLastPattern = false;
                 }
 
-                if (format != "ultrabox" && instrument.modulators[mod] == Config.modulators.dictionary["tempo"].index) {
+                if (format != "lemmbox" && instrument.modulators[mod] == Config.modulators.dictionary["tempo"].index) {
                     for (const pin of note.pins) {
                         const oldMin: number = 30;
                         const newMin: number = 1;
@@ -6188,7 +6188,7 @@ export class Song {
         //if (version > Song._latestVersion) return; // Go ahead and try to parse something from the future I guess? JSON is pretty easy-going!
 
         // Code for auto-detect mode; if statements that are lower down have 'higher priority'
-        if (jsonFormat == "lemmbox") {
+        if (jsonFormat == "UltraBox") {
             if (jsonObject["format"] == "BeepBox") {
                 // Assume that if there is a "riff" song setting then it must be modbox
                 if (jsonObject["riff"] != undefined) {
