@@ -4543,7 +4543,7 @@ export class ColorConfig {
     --ui-widget-focus: #2d293b;
     --pitch-background: #44444A;
     --tonic: #c2a855;
-    --fifth-note: #468;
+    --fifth-note: #6e9166;
     --third-note: #486;
     --white-piano-key: #bbb;
     --black-piano-key: #444;
@@ -5586,7 +5586,8 @@ export class ColorConfig {
     public static readonly textSelection: string = "var(--text-selection, rgba(119,68,255,0.99))";
     public static readonly boxSelectionFill: string = "var(--box-selection-fill, rgba(255,255,255,0.2))";
     public static readonly loopAccent: string = "var(--loop-accent, #74f)";
-    public static readonly linkAccent: string = "var(--link-accent, #98f)";
+    public static readonly sampleFailed: string = "var(--sample-failed, #f00)";
+	public static readonly linkAccent: string = "var(--link-accent, #98f)";
     public static readonly uiWidgetBackground: string = "var(--ui-widget-background, #444)";
     public static readonly uiWidgetFocus: string = "var(--ui-widget-focus, #777)";
     public static readonly pitchBackground: string = "var(--pitch-background, #444)";
@@ -5698,7 +5699,8 @@ export class ColorConfig {
     public static readonly modLabelPrimaryText: string = "var(--mod-label-primary-text, black)";
     public static readonly disabledNotePrimary: string = "var(--disabled-note-primary, #999)";
     public static readonly disabledNoteSecondary: string = "var(--disabled-note-secondary, #666)";
-
+	public static readonly scrollbarColor: string = "var(--scrollbar-color)";
+	public static readonly scrollbarBackground: string = "var(--scrollbar-background)";
 	public static c_pitchSecondaryChannelHue: number = 0;
 	public static c_pitchSecondaryChannelHueScale: number = 0;
 	public static c_pitchSecondaryChannelSat: number = 0;

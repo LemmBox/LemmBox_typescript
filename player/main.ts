@@ -669,6 +669,8 @@ function renderZoomIcon(): void {
 	zoomIcon.style.color = zoomEnabled ? ColorConfig.linkAccent : ColorConfig.uiWidgetBackground;
 }
 
+
+
 function onKeyPressed(event: KeyboardEvent): void {
 	switch (event.keyCode) {
 		case 70: // first bar
@@ -701,7 +703,26 @@ function onKeyPressed(event: KeyboardEvent): void {
 				event.preventDefault();
 			}
 			break;
+		case 71: // g
+				shortenUrl();
+				event.preventDefault();
+			break;
+		case 67: // c
+			onCopyClicked();
+			break;
+
 	}
+}
+
+function shortenUrl() {
+	hashUpdatedExternally();
+	let shortenerStrategy: string = "https://tinyurl.com/api-create.php?url=";
+	const localShortenerStrategy: string | null = window.localStorage.getItem("shortenerStrategySelect");
+
+	// if (localShortenerStrategy == "beepboxnet") shortenerStrategy = "https://www.beepbox.net/api-create.php?url=";
+	if (localShortenerStrategy == "isgd") shortenerStrategy = "https://is.gd/create.php?format=simple&url=";
+
+	window.open(shortenerStrategy + encodeURIComponent(new URL("#" + synth.song!.toBase64String(), location.href).href));
 }
 
 function onCopyClicked(): void {
