@@ -13,11 +13,7 @@
     <audio id="squish2" src="media/squish2.mp3" type="audio/mpeg"></audio>
     <audio id="squish3" src="media/squish3.mp3" type="audio/mpeg"></audio>
     <audio id="explode" src="media/explode.mp3" type="audio/mpeg"></audio>
-    <style type="text/css">
-
-        
-
-
+<style type="text/css">
 html {
     background: var(--page-margin, #020009);
     overflow-x: hidden;
@@ -46,36 +42,10 @@ h1.title {
     color: #fff570;
 }
 
-h2 {
-    padding-top: 1rem;
-    margin-top: 2rem;
-    font-size: 1.5rem;
-}
-
-h3 {
-    font-size: 1.2rem;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    -webkit-text-stroke-width: 0;
-}
-
 p {
     font-size: 0.8rem;
     color: #9C9BA3;
     text-align: center;
-}
-
-a {
-    color: var(--link-accent, #98f);
-}
-
-a.link {
-    color: var(--secondary-text, rgb(193, 193, 193));
-    margin-left: 8px;
-}
-
-a.link:hover {
-    color: var(--secondary-text, rgb(233, 233, 233));
 }
 
 button {
@@ -87,12 +57,10 @@ button {
     color: #020009;
     font-weight: bold;
     transition: all 0.5s;
-    -webkit-transition: all 0.5s;
-	cursor: pointer;
+    cursor: pointer;
 }
 
 button:hover {
-    background-color: #fff570;
     box-shadow: 0 0 20px #fff57050;
     transform: scale(1.1);
 }
@@ -100,48 +68,8 @@ button:hover {
 button:active {
     background-color: #e6da4c;
     transition: all 0.25s;
-    -webkit-transition: all 0.25s;
     box-shadow: none;
     transform: scale(0.98);
-}
-
-label {
-    padding-right: 10px;
-    font-size: 1rem;
-}
-
-.backbuttondiv {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-.headertext {
-    color: #fff570;
-    width: 100%;
-}
-
-#popup {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    background-color: #78c25a;
-    color: white;
-    margin-top: 15px;
-    padding: 10px 15px;
-    font-weight: bold;
-    border-radius: 4px;
-    opacity: 0;
-    transform: translateX(-100%);
-    transition: all 0.5s ease;
-    pointer-events: none;
-    z-index: 1000;
-}
-
-#popup.show {
-    opacity: 1;
-    transform: translateX(0);
-    pointer-events: auto;
 }
 
 .navbar {
@@ -179,7 +107,7 @@ label {
     padding-left: 5px;
     float: right;
     font-family: 'B612', sans-serif;
-	cursor: pointer;
+    cursor: pointer;
 }
 
 .logo-wrapper {
@@ -212,36 +140,21 @@ label {
     opacity: 1;
 }
 
-@media (min-width: 1100px) {
-    body {
-        width: 1100px;
-    }
-
-    h2 {
-        width: 1100px;
-        align-items: start;
-        align-content: start;
-        border-radius: 2px;
-        padding-top: 32px;
-    }
-}
-
 .footertext {
-	font-size:11px;
-	color: #868c95;
-	text-align: center;
-	font-family: 'gg sans', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size:11px;
+    color: #868c95;
+    text-align: center;
+    font-family: 'gg sans', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .footerlinks {
-  color: #f2f3f5;
-  font-family: 'gg sans', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  text-align: right;
-  padding-left: 5px;
-  float: right;
-  font-size: 11px;
+    color: #f2f3f5;
+    font-family: 'gg sans', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-align: right;
+    padding-left: 5px;
+    float: right;
+    font-size: 11px;
 }
-
 
 .footer {
     margin-top: auto;
@@ -252,11 +165,15 @@ label {
 }
 
 #Hotdog {
-transition: transform 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
-
-    </style>
+@media (min-width: 1100px) {
+    body {
+        width: 1100px;
+    }
+}
+</style>
   </body>
 
 <nav class="navbar">
@@ -280,7 +197,7 @@ transition: transform 0.3s ease;
 <div class="footer">
 <nav class="navbar">
   <div class="col"></div>
-  <footer class="navbartitle col footertext">HappyLemonLime | Error 404 - Page not found. </footer>
+  <footer class="navbartitle col footertext">LemmBox | Error 404 - Page not found. </footer>
   <div class="col">
     <a class="footerlinks" href="https://lemmbox.github.io">Home</a>
     <a class="footerlinks" onclick="history.back()">Go Back</a>
@@ -294,7 +211,7 @@ transition: transform 0.3s ease;
     // Randomize display of header
 
     const plants = [
-        "Page not found", "In these trying times, have a hotdog " + '<img id="Hotdog" src="theme_resources/hotdog.png" width="620.5" height="410.625" onclick="myFunction()"> <audio id="squish1" src="media/squish1.mp3" type="audio/mpeg"></audio><audio id="squish2" src="media/squish2.mp3" type="audio/mpeg"></audio><audio id="squish3" src="media/squish3.mp3" type="audio/mpeg"></audio>', "Page not found...", "Page not found, come back next year.", "I found the page, but it is MINE. I am NOT giving it up that easily." + '<br><p>smh...</p>'
+        "Page not found", "May I offer you a nice hotdog in this trying time? " + '<img id="Hotdog" src="theme_resources/hotdog.png" width="620.5" height="410.625" onclick="myFunction()"> <audio id="squish1" src="media/squish1.mp3" type="audio/mpeg"></audio><audio id="squish2" src="media/squish2.mp3" type="audio/mpeg"></audio><audio id="squish3" src="media/squish3.mp3" type="audio/mpeg"></audio>', "Page not found...", "Page not found, come back next year.", "I found the page, but it is MINE. I am NOT giving it up that easily." + '<br><p>smh...</p>'
     ];
 
         const date = new Date();
