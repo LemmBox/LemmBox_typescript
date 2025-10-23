@@ -67,6 +67,13 @@ export class ThemePrompt implements Prompt {
 			option({ value: "nepbox" }, "Nepbox"),
 			option({ value: "slarmoosbox"}, "Slarmoo's Box"),
 		),
+		optgroup({ label: "Community" },
+			option({ value: "greyscale" }, "Greyscale"),
+			option({ value: "red" }, "Red"),
+			option({ value: "green" }, "Green"),
+			option({ value: "blue" }, "Blue"),
+			option({ value: "death" }, "D's Quick Box Theme")
+		),		
 		optgroup({ label: "Misc" },
 			option({ value: "azur lane" }, "Azur Lane"),
 			option({ value: "custom" }, "Custom")

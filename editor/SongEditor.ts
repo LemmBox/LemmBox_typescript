@@ -4473,7 +4473,9 @@ export class SongEditor {
                 if (canPlayNotes) break;
                 if (needControlForShortcuts == (event.ctrlKey || event.metaKey)) {
                     if (event.shiftKey) {
-                        this._randomGenerated();
+                        this._randomGenerated(false);
+                    } else if (event.altKey) {
+                        this._randomGenerated(true);
                     } else {
                         this._randomPreset();
                     }
@@ -4875,8 +4877,8 @@ export class SongEditor {
         this._doc.record(new ChangePreset(this._doc, pickRandomPresetValue(isNoise)));
     }
 
-    private _randomGenerated(): void {
-        this._doc.record(new ChangeRandomGeneratedInstrument(this._doc));
+    private _randomGenerated(usesCurrentInstrumentType: boolean): void {
+        this._doc.record(new ChangeRandomGeneratedInstrument(this._doc, usesCurrentInstrumentType));
     }
 
 
@@ -4958,7 +4960,7 @@ export class SongEditor {
                     this._randomPreset();
                     break;
                 case "randomGenerated":
-                    this._randomGenerated();
+                    this._randomGenerated(false);
                     break;
             }
             this._doc.notifier.changed();

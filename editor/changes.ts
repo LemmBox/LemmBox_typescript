@@ -712,7 +712,7 @@ export class ChangePreset extends Change {
 }
 
 export class ChangeRandomGeneratedInstrument extends Change {
-    constructor(doc: SongDocument) {
+    constructor(doc: SongDocument, usesCurrentInstrumentType: boolean) {
         super();
 
         interface ItemWeight<T> {
@@ -783,12 +783,13 @@ export class ChangeRandomGeneratedInstrument extends Change {
             new PotentialFilterPoint(0.2, FilterType.peak, 0, maxFreq, 500.0, 0),
         ]);
 
-		if (isNoise) {
-			const type: InstrumentType = selectWeightedRandom([
-				{ item: InstrumentType.noise, weight: 3 },
-				{ item: InstrumentType.spectrum, weight: 3 },
+        if (isNoise) {
+            const type: InstrumentType = usesCurrentInstrumentType ? instrument.type :
+            selectWeightedRandom([
+                { item: InstrumentType.noise, weight: 3 },
+                { item: InstrumentType.spectrum, weight: 3 },
                 { item: InstrumentType.drumset, weight: 1 },
-			]);
+            ]);
 			instrument.preset = instrument.type = type;
 
             if (type != InstrumentType.drumset) { // Drumset doesn't use fade.
@@ -1019,7 +1020,8 @@ export class ChangeRandomGeneratedInstrument extends Change {
 				default: throw new Error("Unhandled noise instrument type in random generator.");
 			}
 		} else {
-			const type: InstrumentType = selectWeightedRandom([
+            const type: InstrumentType = usesCurrentInstrumentType ? instrument.type :
+            selectWeightedRandom([
                 { item: InstrumentType.chip, weight: 2 },
                 // { item: InstrumentType.noise, weight: 1 },
                 { item: InstrumentType.pwm, weight: 2 },
@@ -1029,8 +1031,8 @@ export class ChangeRandomGeneratedInstrument extends Change {
                 { item: InstrumentType.pickedString, weight: 2 },
                 { item: InstrumentType.spectrum, weight: 2 },
                 { item: InstrumentType.fm, weight: 2 },
-				{ item: InstrumentType.fm6op, weight: 2 },
-			]);
+                { item: InstrumentType.fm6op, weight: 2 },
+            ]);
 			instrument.preset = instrument.type = type;
 			
             instrument.fadeIn = (Math.random() < 0.5) ? 0 : selectCurvedDistribution(0, Config.fadeInRange - 1, 0, 2);

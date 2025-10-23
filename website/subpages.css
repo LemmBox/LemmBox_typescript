@@ -246,3 +246,81 @@ p {
     font-family: monospace;
     border: 1.75px solid #2a252e;
 }
+
+#grad1 {
+    background: #00ffc0;
+    background: -webkit-linear-gradient(left, #d8db1c, #25db1c, #1edde9, #182dbe, #df1ee9, #8d121a);
+    background: -o-linear-gradient(right, #d8db1c, #25db1c, #1edde9, #182dbe, #df1ee9, #8d121a);
+    background: -moz-linear-gradient(right, #d8db1c, #25db1c, #1edde9, #182dbe, #df1ee9, #8d121a);
+    background: linear-gradient(to right, #d8db1c, #25db1c, #1edde9, #182dbe, #df1ee9, #8d121a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 12.25%;
+}
+
+#grad2 {
+    background: #ffffff;
+    background: -webkit-linear-gradient(left, #ff032b, #ffff0d, #0aff0a, #0dffff, #292aff, #ff08ff);
+    background: -o-linear-gradient(left, #ff032b, #ffff0d, #0aff0a, #0dffff, #292aff, #ff08ff);
+    background: -moz-linear-gradient(left, #ff032b, #ffff0d, #0aff0a, #0dffff, #292aff, #ff08ff);
+    background: linear-gradient(left, #ff032b, #ffff0d, #0aff0a, #0dffff, #292aff, #ff08ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 12.25%;
+}
+
+.keybind {
+    background-color: #44444A80;
+    border-radius: 4px;
+    display: inline-block;
+    padding: 1.75px 4px;
+    color: #ebebeb;
+    font-family: monospace;
+    border: 1.75px solid #40404080;
+}
+
+.example {
+  width: 620px; 
+  display: inline-block;
+  vertical-align: top;  
+}
+
+details > summary {
+    list-style-type: '';
+}
+
+details[open] > summary {
+    list-style-type: '';
+}
+
+
+details[open] > summary {
+    margin-bottom: 0.5rem;
+}
+
+.example-info {
+    font-size:9px;
+	color: #868c95;
+	text-align: center;
+	font-family: 'gg sans', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+details {
+    cursor: pointer;
+    user-select: none;
+}
+
+details:hover {
+    color: #c0c0c0;
+}
+
+.image-showcase {
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
+}
+
+
+.image-showcase:hover {
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.25);
+}

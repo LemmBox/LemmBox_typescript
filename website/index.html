@@ -518,27 +518,58 @@ transition: transform 0.3s ease;
 
     const plants = [
         // jummbox/goldbox plants    
-        "🍂", "🌿", "🌺", "🍃", "🍄", "🍀🌷", " 1️⃣3️⃣1️⃣2️⃣", "🌈🍂🍁🍀🌷🍄🐲🌈🍃🌺🍄",
+        "🍂",
+        "🌿",
+        "🌺",
+        "🍃",
+        "🍄",
+        "🍀🌷",
+        " 1️⃣3️⃣1️⃣2️⃣",
+        "🌈🍂🍁🍀🌷🍄🐲🌈🍃🌺🍄",
+
         // blubox plants
-        "≽(◕ ᴗ ◕)≼", "≽(ᴗ _ ᴗ)≼", "≽(⌐ _ ⌐)≼", "≽(ᵕ ‿ ᵕ)≼", 
+        "≽(◕ ᴗ ◕)≼",
+        "≽(ᴗ _ ᴗ)≼",
+        "≽(⌐ _ ⌐)≼",
+        "≽(ᵕ ‿ ᵕ)≼",
+
         // familiarbox plant (there were others, but the code of familiarbox is long gone)
         "☀️⭐🕒👁️",
+
         // suggested by mel, meant to supplement the lack of a worm logo
         "🪱",
+
         // plant originally suggested by mel in reference to the "(don't) eat thegubbys" meme
         "🐟",
+        
         // blubox desktop plants 
-        "⚡", "🔵", "💫",
+        "⚡",
+        "🔵",
+        "💫",
+
         // dogebox2 plants 
-        "🍕", '<img id="Hotdog" src="theme_resources/hotdog.png" width="62.5" height="41.625" onclick="myFunction()"> <audio id="squish1" src="media/squish1.mp3" type="audio/mpeg"></audio><audio id="squish2" src="media/squish2.mp3" type="audio/mpeg"></audio><audio id="squish3" src="media/squish3.mp3" type="audio/mpeg"></audio>', "🍔", "🍟",
+        "🍕",
+        '<img id="Hotdog" src="theme_resources/hotdog.png" width="62.5" height="41.625" onclick="myFunction()"> <audio id="squish1" src="media/squish1.mp3" type="audio/mpeg"></audio><audio id="squish2" src="media/squish2.mp3" type="audio/mpeg"></audio><audio id="squish3" src="media/squish3.mp3" type="audio/mpeg"></audio>', "🍔", "🍟",
         // Slarmoo's Box plants
-        "✨","🌈","🌧️","🪨","🐍","🌲","🌳","𓆏","🦀","🍄‍🟫","🌵","and Bobby","🥚",
+        "✨",
+        "🌈",
+        "🌧️",
+        "🪨",
+        "🐍",
+        "🌲",
+        "🌳",
+        "𓆏",
+        "🦀",
+        "🍄‍🟫",
+        "🌵",
+        "and Bobby",
+        "🥚",
         // LemmBox 
         "🍋",
         `<div class="logo-wrapper">
         <img src="theme_resources/LemmBoxLogo.png" alt="LemmBox" class="logo lemon nosel" height="64px" onclick="lemonClicker(event)">
         <img src="theme_resources/LemmBoxLogo.png" alt="" class="logo-glow lemon nosel" height="64px" onclick="lemonClicker(event)" aria-hidden="true">
-        </div>`,'<img id="Hotdog" src="theme_resources/hotdog.png" width="62.5" height="41.625" onclick="myFunction()"> <audio id="squish1" src="media/squish1.mp3" type="audio/mpeg"></audio><audio id="squish2" src="media/squish2.mp3" type="audio/mpeg"></audio><audio id="squish3" src="media/squish3.mp3" type="audio/mpeg"></audio>',"asdfjoiksop! ,!!","Hi! I'm Mr. Buying!","i am in lemmbox"
+        </div>`,'<img id="Hotdog" src="theme_resources/hotdog.png" width="62.5" height="41.625" onclick="myFunction()"> <audio id="squish1" src="media/squish1.mp3" type="audio/mpeg"></audio><audio id="squish2" src="media/squish2.mp3" type="audio/mpeg"></audio><audio id="squish3" src="media/squish3.mp3" type="audio/mpeg"></audio>',"asdfjoiksop! ,!!","Hi! I'm Mr. Buying!","i am in lemmbox","Try slarmoos box!", `<img src="media/putmeinlemmbox.png" alt="Put me in LemmBox" height="64px">`,"goober was here >:3"
     ];
                                                                                                                                                                                                                                                                                                                                             // User suggested plants
 const date = new Date();
@@ -601,7 +632,6 @@ const date = new Date();
         document.getElementById("keyboard-instructions").style.display = "none";
         document.getElementById("mobile-instructions").style.display = "";
         document.getElementById("bar-editing").innerHTML = "Tap the boxes to move to a different part of the song, or tap on the currently selected box to swap which pattern is played during that part of the song.";
-        //document.getElementById("offline-instructions").innerHTML = 'You can use UltraBox when your device is offline if you put a shortcut to UltraBox on your home screen. <ul><li>Chrome: find the "Add to Home Screen" option in the ⋮ menu.</li><li>Firefox: find the "Add Page Shortcut" option in the ⋮ menu.</li><li>Safari: find the "Add to Home Screen" option in the bookmark menu.</li></ul>';
     }
 
     function browserHasRequiredFeatures() {
