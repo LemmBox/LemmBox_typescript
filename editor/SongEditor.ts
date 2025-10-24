@@ -1384,6 +1384,7 @@ export class SongEditor {
         this._echoSustainRow,
         this._echoDelayRow,
         this._reverbRow,
+        this._granularContainerRow,
         div({ style: `padding: 2px 0; margin-left: 2em; display: flex; align-items: center;` },
             span({ style: `flex-grow: 1; text-align: center;` }, span({ class: "tip", onclick: () => this._openPrompt("envelopes") }, "Envelopes")),
             this._envelopeDropdown,
@@ -2986,8 +2987,8 @@ export class SongEditor {
                 this._grainAmountsSlider.updateValue(instrument.grainAmounts);
                 this._grainRangeSlider.updateValue(instrument.grainRange);
             } else {
-                    this._granularContainerRow.style.display = "none";
-                }
+                this._granularContainerRow.style.display = "none";
+            }
             
             if (instrument.type == InstrumentType.chip || instrument.type == InstrumentType.customChipWave || instrument.type == InstrumentType.harmonics || instrument.type == InstrumentType.pickedString || instrument.type == InstrumentType.spectrum || instrument.type == InstrumentType.pwm || instrument.type == InstrumentType.noise) {
                 this._unisonSelectRow.style.display = "";
@@ -3269,7 +3270,7 @@ export class SongEditor {
                             allInstrumentPans:         boolean = true,
                             allInstrumentChorus:       boolean = true,
                             allInstrumentEchoes:       boolean = true,
-                            allInstrumentReverbs:      boolean = true;
+                            allInstrumentReverbs:      boolean = true,
                             allInstrumentGranulars:    boolean = true;
                             let instrumentCandidates: number[] = [];
                         if (modInstrument >= channel.instruments.length) {

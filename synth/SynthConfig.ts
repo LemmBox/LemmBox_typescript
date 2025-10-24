@@ -133,10 +133,10 @@ export const enum EnvelopeComputeIndex {
     supersawDynamism,
 	supersawSpread,
 	supersawShape,
-    granular,
-    grainAmount,
-    grainSize,
-    grainRange,    
+    // granular,
+    // grainAmount,
+    // grainSize,
+    // grainRange,    
     length,
 }
 
@@ -1549,10 +1549,10 @@ export class Config {
         { name: "supersawDynamism",       computeIndex:       EnvelopeComputeIndex.supersawDynamism,       displayName: "dynamism",         /*perNote:  true,*/ interleave: false, isFilter: false, /*range: Config.supersawDynamismMax + 1, */    maxCount: 1,    effect: null,                    compatibleInstruments: [InstrumentType.supersaw]},
 		{ name: "supersawSpread",         computeIndex:       EnvelopeComputeIndex.supersawSpread,         displayName: "spread",           /*perNote:  true,*/ interleave: false, isFilter: false, /*range: Config.supersawSpreadMax + 1,   */    maxCount: 1,    effect: null,                    compatibleInstruments: [InstrumentType.supersaw]},
 		{ name: "supersawShape",          computeIndex:       EnvelopeComputeIndex.supersawShape,          displayName: "saw↔pulse",        /*perNote:  true,*/ interleave: false, isFilter: false, /*range: Config.supersawShapeMax + 1,    */    maxCount: 1,    effect: null,                    compatibleInstruments: [InstrumentType.supersaw]},    
-        { name: "granular",               computeIndex: EnvelopeComputeIndex.granular,                  displayName: "granular",            interleave: false,  isFilter: false,    maxCount: 1,                        effect: EffectType.granular,        compatibleInstruments: null },
-        { name: "grainFreq",              computeIndex: EnvelopeComputeIndex.grainAmount,               displayName: "grain freq",          interleave: false,  isFilter: false,    maxCount: 1,                        effect: EffectType.granular,        compatibleInstruments: null },
-        { name: "grainSize",              computeIndex: EnvelopeComputeIndex.grainSize,                 displayName: "grain size",          interleave: false,  isFilter: false,    maxCount: 1,                        effect: EffectType.granular,        compatibleInstruments: null },
-        { name: "grainRange",             computeIndex: EnvelopeComputeIndex.grainRange,                displayName: "grain range",         interleave: false,  isFilter: false,    maxCount: 1,                        effect: EffectType.granular,        compatibleInstruments: null },
+        // { name: "granular",               computeIndex: EnvelopeComputeIndex.granular,                  displayName: "granular",            interleave: false,  isFilter: false,    maxCount: 1,                        effect: EffectType.granular,        compatibleInstruments: null },
+        // { name: "grainFreq",              computeIndex: EnvelopeComputeIndex.grainAmount,               displayName: "grain freq",          interleave: false,  isFilter: false,    maxCount: 1,                        effect: EffectType.granular,        compatibleInstruments: null },
+        // { name: "grainSize",              computeIndex: EnvelopeComputeIndex.grainSize,                 displayName: "grain size",          interleave: false,  isFilter: false,    maxCount: 1,                        effect: EffectType.granular,        compatibleInstruments: null },
+        // { name: "grainRange",             computeIndex: EnvelopeComputeIndex.grainRange,                displayName: "grain range",         interleave: false,  isFilter: false,    maxCount: 1,                        effect: EffectType.granular,        compatibleInstruments: null },
         // Controlling filter gain is less obvious and intuitive than controlling filter freq, so to avoid confusion I've disabled it for now...
         //{name: "noteFilterGain",         computeIndex:       EnvelopeComputeIndex.noteFilterGain0,        displayName: "n. filter # vol",  /*perNote:  true,*/ interleave: false, isFilter:  true, range: Config.filterGainRange,             maxCount: Config.filterMaxPoints, effect: EffectType.noteFilter, compatibleInstruments: null},
         /*
