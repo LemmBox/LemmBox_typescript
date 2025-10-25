@@ -3287,7 +3287,7 @@ export class Song {
                 }
 
                 // The list of enabled effects is represented as a 12-bit bitfield using two six-bit characters.
-                buffer.push(SongTagCode.effects, base64IntToCharCode[instrument.effects >> 6], base64IntToCharCode[instrument.effects & 63]);
+                buffer.push(SongTagCode.effects, base64IntToCharCode[instrument.effects >> 12], base64IntToCharCode[(instrument.effects >> 6) & 63], base64IntToCharCode[instrument.effects & 63]);
                 if (effectsIncludeNoteFilter(instrument.effects)) {
                     buffer.push(base64IntToCharCode[+instrument.noteFilterType]);
                     if (instrument.noteFilterType) {
@@ -7878,8 +7878,8 @@ class InstrumentState {
                 this.granularMaximumGrains = synth.getModValue(Config.modulators.dictionary["grain freq"].index, channelIndex, instrumentIndex, false);
                 granularChance = (synth.getModValue(Config.modulators.dictionary["grain freq"].index, channelIndex, instrumentIndex, false) + 1);
             }
-            this.granularMaximumGrains = Math.floor(Math.pow(2, this.granularMaximumGrains * envelopeStarts[EnvelopeComputeIndex.grainAmount]));
-            granularChance = granularChance * envelopeStarts[EnvelopeComputeIndex.grainAmount];
+            // this.granularMaximumGrains = Math.floor(Math.pow(2, this.granularMaximumGrains * envelopeStarts[EnvelopeComputeIndex.grainAmount]));
+            // granularChance = granularChance * envelopeStarts[EnvelopeComputeIndex.grainAmount];
         }
 
         this.allocateNecessaryBuffers(synth, instrument, samplesPerTick);
@@ -7893,8 +7893,8 @@ class InstrumentState {
                 this.granularMix = synth.getModValue(Config.modulators.dictionary["granular"].index, channelIndex, instrumentIndex, false) / Config.granularRange;
                 granularMixEnd = synth.getModValue(Config.modulators.dictionary["granular"].index, channelIndex, instrumentIndex, true) / Config.granularRange;
             }
-            this.granularMix *= envelopeStarts[EnvelopeComputeIndex.granular];
-            granularMixEnd *= envelopeEnds[EnvelopeComputeIndex.granular];
+            // this.granularMix *= envelopeStarts[EnvelopeComputeIndex.granular];
+            // granularMixEnd *= envelopeEnds[EnvelopeComputeIndex.granular];
             this.granularMixDelta = (granularMixEnd - this.granularMix) / roundedSamplesPerTick;
             for (let iterations: number = 0; iterations < Math.ceil(Math.random() * Math.random() * 10); iterations++) { //dirty weighting toward lower numbers
                 //create a grain
@@ -7903,12 +7903,12 @@ class InstrumentState {
                     if (synth.isModActive(Config.modulators.dictionary["grain size"].index, channelIndex, instrumentIndex)) {
                         granularMinGrainSizeInMilliseconds = synth.getModValue(Config.modulators.dictionary["grain size"].index, channelIndex, instrumentIndex, false);
                     }
-                    granularMinGrainSizeInMilliseconds *= envelopeStarts[EnvelopeComputeIndex.grainSize];
+                    // granularMinGrainSizeInMilliseconds *= envelopeStarts[EnvelopeComputeIndex.grainSize];
                     let grainRange = instrument.grainRange;
                     if (synth.isModActive(Config.modulators.dictionary["grain range"].index, channelIndex, instrumentIndex)) {
                         grainRange = synth.getModValue(Config.modulators.dictionary["grain range"].index, channelIndex, instrumentIndex, false);
                     }
-                    grainRange *= envelopeStarts[EnvelopeComputeIndex.grainRange];
+                    // grainRange *= envelopeStarts[EnvelopeComputeIndex.grainRange];
                     const granularMaxGrainSizeInMilliseconds: number = granularMinGrainSizeInMilliseconds + grainRange;
                     const granularGrainSizeInMilliseconds: number = granularMinGrainSizeInMilliseconds + (granularMaxGrainSizeInMilliseconds - granularMinGrainSizeInMilliseconds) * Math.random();
                     const granularGrainSizeInSeconds: number = granularGrainSizeInMilliseconds / 1000.0;
