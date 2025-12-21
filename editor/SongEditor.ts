@@ -781,7 +781,7 @@ export class SongEditor {
         
         option({ value: "configureShortener" }, "🛠 Customize Url Shortener..."),
         
-        option({ value: "shortenUrl" }, "… Shorten Song URL"),
+        option({ value: "shortenUrl" }, "… Shorten Song URL (G)"),
         
         option({ value: "viewPlayer" }, "▶ View in Song Player (⇧P)"),
         
@@ -835,7 +835,7 @@ export class SongEditor {
 	    option({ value: "addExternal" }, "Add Custom Samples... (⇧Q)"),
 
     );
-
+    
     private readonly _optionsMenu: HTMLSelectElement = select({ style: "width: 100%;" },
 
         option({ selected: true, disabled: true, hidden: false }, "Preferences"), // todo: "hidden" should be true but looks wrong on mac chrome, adds checkmark next to first visible option even though it's not selected. :(

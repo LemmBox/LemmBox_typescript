@@ -503,7 +503,6 @@ transition: transform 0.3s ease;
         </div>
     </div>
 
-
     <!--aa
     Instead of loading js beepbox editor interface directly, test for browser support.
     <script type="text/javascript" src="beepbox_editor.min.js"></script>
@@ -514,6 +513,30 @@ transition: transform 0.3s ease;
 </div>
 <script type="text/javascript">
 
+    var time = new Date(); 
+
+            var timeOffset = 0;
+
+            var AMPM = "AM"
+
+            var timeHours = time.getHours();
+            var timeMinutes = time.getMinutes();
+            var timeMinutesExt = "0";
+            if (timeHours > 12) {
+                timeOffset = 12;
+                AMPM = "PM";
+            } else {
+                timeOffset = 0;
+                AMPM = "AM";
+            }
+
+            if (timeMinutes < 10) {
+                timeMinutesExt = "0";
+            } else {
+                timeMinutesExt = "";
+            }
+
+            var timeNum = (timeHours-timeOffset)+":"+timeMinutesExt+timeMinutes+" "+AMPM;
     // Randomize display of header
 
     const plants = [
@@ -564,12 +587,77 @@ transition: transform 0.3s ease;
         "🌵",
         "and Bobby",
         "🥚",
+        "🌾",
+        "🎍",
+        "🐳",
+        "🪸",
+        "🐚",
+        "🍂🍁",
+        "🪸🪸🫧🐙🐡🐠🐠🫧🐟",
+        // D's Quick Box Mod
+        "☠︎", "plant id: 36", "you're really lucky if you get this plant",
         // LemmBox 
         "🍋",
         `<div class="logo-wrapper">
         <img src="theme_resources/LemmBoxLogo.png" alt="LemmBox" class="logo lemon nosel" height="64px" onclick="lemonClicker(event)">
         <img src="theme_resources/LemmBoxLogo.png" alt="" class="logo-glow lemon nosel" height="64px" onclick="lemonClicker(event)" aria-hidden="true">
-        </div>`,'<img id="Hotdog" src="theme_resources/hotdog.png" width="62.5" height="41.625" onclick="myFunction()"> <audio id="squish1" src="media/squish1.mp3" type="audio/mpeg"></audio><audio id="squish2" src="media/squish2.mp3" type="audio/mpeg"></audio><audio id="squish3" src="media/squish3.mp3" type="audio/mpeg"></audio>',"asdfjoiksop! ,!!","Hi! I'm Mr. Buying!","i am in lemmbox","Try slarmoos box!", `<img src="media/putmeinlemmbox.png" alt="Put me in LemmBox" height="64px">`,"goober was here >:3"
+        </div>`,
+        '<img id="Hotdog" src="theme_resources/hotdog.png" width="62.5" height="41.625" onclick="myFunction()"> <audio id="squish1" src="media/squish1.mp3" type="audio/mpeg"></audio><audio id="squish2" src="media/squish2.mp3" type="audio/mpeg"></audio><audio id="squish3" src="media/squish3.mp3" type="audio/mpeg"></audio>',
+        "asdfjoiksop! ,!!",
+        "Hi! I'm Mr. Buying!",
+        "i am in lemmbox",
+         `<img src="media/putmeinlemmbox.png" alt="Put me in LemmBox" height="64px">`,
+         "goober was here >:3",
+         "It is currently "+timeNum+" right now!",
+         "Try Slarmoo's Box!",
+         "Try AbyssBox!",
+         "Try JukeBox!",
+         "Try JummBox!",
+         "Try UltraBox!",
+         "Try D's Quick Box Mod!",
+         "Try BloxBox!",
+         "Try BulbBox!",
+         "Try CardboardBox!",
+         "Try ModBox!",
+         "Try SandBox!",
+         "Try GoldBox!",
+         "Try WackyBox!",
+         "Try Unbox!",
+         "Try MidBox!",
+         "Try Dogebox2!",
+         "Don't try FMBox!",
+         "LemonLime was here",
+         "🍪 (does nothing)",
+         "Midge 🐈 :)",
+         "Nulsika wants to be here",
+         "Preheat the oven to 450F",
+         "Place TheGubbys into the oven",
+         "I use Arch btw",
+         "!green2",
+         "😔",
+         "Calico :3",
+         "Hello :D",
+         "Music time!!",
+         "let's finish this song.",
+         "C418 🔥🔥🔥",
+         '<img src="media/true.png" width="48" height="48">',
+         '<img src="media/eeheehee.png" width="48" height="48">',
+         "BeepBox radio every week!",
+         "Flamin' Hot",
+         "Join the BeepBox discord!",
+         "What's BeepBox?",
+         "🥀",
+         "You should try eating fish!",
+         "burger",
+         "chezburger",
+         ":3",
+         ":p",
+         ":)",
+         "^w^",
+         ":o",
+         "Can I has chezburger plz?",
+         "what is BeepBox?",
+         "Join the !yellow1 gang!"
     ];
                                                                                                                                                                                                                                                                                                                                             // User suggested plants
 const date = new Date();
